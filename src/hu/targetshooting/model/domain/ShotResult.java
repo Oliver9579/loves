@@ -19,4 +19,17 @@ public class ShotResult {
     public Integer getScore() {
         return score;
     }
+
+    public String getShots() {
+        return shots;
+    }
+
+    @Override
+    public String toString() {
+        return "\n{" +
+                "id=" + id +
+                ", shots='" + shots + '\'' +
+                ", score=" + score +
+                '}';
+    }
 }
