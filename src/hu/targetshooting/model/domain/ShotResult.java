@@ -1,5 +1,6 @@
 package hu.targetshooting.model.domain;
 
+import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -43,6 +44,13 @@ public class ShotResult {
         return shots.chars()
                 .filter(i -> (char) i == '+')
                 .count();
+    }
+
+    public Integer getLongestSuccessSequenceSize(){
+        return Arrays.stream(shots.split("-"))
+                .mapToInt(String::length)
+                .max()
+                .getAsInt();
     }
 
     public Integer getId() {
